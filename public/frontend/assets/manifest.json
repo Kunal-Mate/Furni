@@ -1,0 +1,27 @@
+{
+  "name": "Cromā",
+  "short_name": "Cromā",
+  "description": "Multipurpose E-Commerce Template",
+  "lang" : "en",
+  "dir": "ltr",
+  "start_url": "/index.html",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "assets/app-icons/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/app-icons/icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "background_color": "#fff",
+  "theme_color": "#131920",
+  "display": "standalone",
+  "orientation": "portrait-primary"
+}
