@@ -10,7 +10,7 @@
 
     <!-- Navbar brand (Logo) -->
     <a class="navbar-brand position-relative z-1 ms-4 ms-sm-5 ms-lg-4 me-2 me-sm-0 me-lg-3"
-      href="{{ route('index') }}">{{ config('app.name') }}</a>
+      href="{{ route('index') }}">Sitwell Chairs</a>
 
     <!-- Main navigation that turns into offcanvas on screens < 992px wide (lg breakpoint) -->
     <nav class="offcanvas offcanvas-start" id="navbarNav" tabindex="-1" aria-labelledby="navbarNavLabel">

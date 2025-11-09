@@ -22,6 +22,7 @@ return new class extends Migration {
             $table->text('description')->nullable();
             $table->text('feature')->nullable();
             $table->string('thumbnail', 200)->nullable();
+            $table->string('videoLink', 50)->nullable();
             $table->boolean('isVisible')->default(1);
             $table->timestamps();
 
