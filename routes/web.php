@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\TempImageController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -36,7 +39,7 @@ Route::post('/registration', [AuthController::class, 'registration'])->name('reg
 
 
 
-Route::group(['middleware' => 'auth:admin'], function () {
+Route::group(['prefix' => 'Admin', 'middleware' => 'auth:admin'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/setup', [DashboardController::class, 'setup'])->name('setup');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -67,6 +70,74 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/roles/edit/{id}', [RoleController::class, 'edit'])->name('roles.edit');
     Route::put('/roles/{id}', [RoleController::class, 'update'])->name('roles.update');
     Route::delete('/roles/delete', [RoleController::class, 'delete'])->name('roles.delete');
+
+
+
+
+    Route::group(['prefix' => 'property'], function () {
+        Route::get('/', [PropertyController::class, 'index'])->name('property');
+        Route::get('/create', [PropertyController::class, 'create'])->name('property.create');
+        Route::get('/show/{id}', [PropertyController::class, 'show'])->name('property.show');
+        Route::post('/store', [PropertyController::class, 'store'])->name('property.store');
+        Route::get('/edit/{id}', [PropertyController::class, 'edit'])->name('property.edit');
+        Route::put('/update/{id}', [PropertyController::class, 'update'])->name('property.update');
+        Route::post('/delete', [PropertyController::class, 'delete'])->name('property.delete');
+    });
+
+    Route::prefix('booking')->group(function () {
+        Route::get('/', [BookingController::class, 'index'])->name('booking.index');
+        Route::get('/create', [BookingController::class, 'create'])->name('booking.create');
+        Route::post('/store', [BookingController::class, 'store'])->name('booking.store');
+        Route::get('/edit/{id}', [BookingController::class, 'edit'])->name('booking.edit');
+        Route::post('/update/{id}', [BookingController::class, 'update'])->name('booking.update');
+        Route::post('/delete/{id}', [BookingController::class, 'destroy'])->name('booking.delete');
+        Route::get('/send-whatsapp/{id}', [BookingController::class, 'sendWhatsApp'])->name('booking.send.whatsapp');
+        Route::get('/send-email/{id}', [BookingController::class, 'sendEmail'])->name('booking.send.email');
+    });
+
+    // category
+    Route::group(['prefix' => 'categories'], function () {
+        Route::get('/', [CategoryController::class, 'index'])->name('categ');
+        Route::post('/', [CategoryController::class, 'store'])->name('cate.store');
+        Route::put('/{id}', [CategoryController::class, 'update'])->name('cate.update');
+        Route::post('/delete', [CategoryController::class, 'delete'])->name('cate.delete');
+    });
+
+    // product
+    Route::group(['prefix' => 'products'], function () {
+        Route::get('/', [ProductController::class, 'index'])->name('products.index');
+        Route::get('/create', [ProductController::class, 'create'])->name('products.create');
+        Route::post('/', [ProductController::class, 'store'])->name('products.store');
+        Route::get('/show/{id}', [ProductController::class, 'show'])->name('products.show');
+        Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('products.edit');
+        Route::put('/{id}', [ProductController::class, 'update'])->name('products.update');
+        Route::post('/delete', [ProductController::class, 'delete'])->name('products.delete');
+        Route::post('/deletePrice', [ProductController::class, 'deletePrice'])->name('products.updatePrice');
+    });
+
+
+    Route::group(['prefix' => 'order'], function () {
+        Route::get('/', [OrderController::class, 'index'])->name('orders');
+        Route::get('/create', [OrderController::class, 'create'])->name('orders.create');
+        Route::get('/show/{id}', [OrderController::class, 'show'])->name('orders.show');
+        Route::get('/edit/{id}', [OrderController::class, 'edit'])->name('orders.edit');
+        Route::post('/', [OrderController::class, 'store'])->name('orders.store');
+        // Route::put('/{id}', [OrderController::class, 'update'])->name('orders.update');
+        Route::post('/delete', [OrderController::class, 'delete'])->name('orders.delete');
+        // Route::get('/{id}', [OrderController::class, 'show'])->name('orders.show');
+        Route::post('/updateStatus', [OrderController::class, 'updateOrderStatus'])->name('orders.updateStatus');
+    });
+
+
+
+    Route::post('/upload-temp-img', [TempImageController::class, 'create'])->name('temp-image.create');
+    Route::get('/getSlug', function (Request $request) {
+        $slug = '';
+        if (!empty($request->title)) {
+            $slug = Str::slug($request->title);
+        }
+        return response()->json(['status' => true, 'slug' => $slug]);
+    })->name('getSlug');
 });
 
 

@@ -11,7 +11,6 @@
     <meta name="description" content="Chairs">
     <meta name="keywords"
         content="online shop, e-commerce, online store, market, multipurpose, product landing, cart, checkout, ui kit, light and dark mode, bootstrap, html5, css3, javascript, gallery, slider, mobile, pwa">
-    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="manifest" href="{{ asset('frontend/assets/manifest.json') }}">
     <link rel="icon" type="image/png" href="{{ asset('frontend/assets/app-icons/icon-32x32.png') }}" sizes="32x32">
@@ -25,9 +24,9 @@
         type="font/woff2" crossorigin="">
 
     <!-- Font icons -->
-    <link rel="preload" href="{{ asset('frontend/assets/icons/Cartzilla-icons.woff2') }}" as="font" type="font/woff2"
+    <link rel="preload" href="{{ asset('frontend/assets/icons/cartzilla-icons.woff2') }}" as="font" type="font/woff2"
         crossorigin="">
-    <link rel="stylesheet" href="{{ asset('frontend/assets/icons/Cartzilla-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/icons/cartzilla-icons.min.css') }}">
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/vendor/swiper/swiper-bundle.min.css') }}">

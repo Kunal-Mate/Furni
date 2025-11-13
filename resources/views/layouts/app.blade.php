@@ -12,6 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('assets/libs/sweet-alert/sweetalert2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/libs/alert/alert.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/libs/dropzone/dropzone.min.css') }}">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -44,12 +45,14 @@
     <!-- Import Js Files -->
     <script src="{{ asset('assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/dropzone/dropzone.min.js') }}"></script>
     <script src="{{ asset('assets/js/sidebarmenu.js') }}"></script>
     <script src="{{ asset('assets/js/app.min.js') }}"></script>
     <script src="{{ asset('assets/libs/simplebar/dist/simplebar.js') }}"></script>
     <script src="{{ asset('assets/libs/sweet-alert/sweetalert2.min.js') }}"></script>
     <script src="{{ asset('assets/libs/sweet-alert/sweet-alert.init.js') }}"></script>
     <script src="{{ asset('assets/libs/alert/alert.js') }}"></script>
+
 
     <!-- <script src="{{ asset('assets/js/theme/sidebarmenu.js') }}"></script> -->
     <!--
