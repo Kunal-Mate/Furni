@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,9 +32,10 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-
-        // header
-
-
+        View::composer('frontend.layout.header', function ($view) {
+            $categories = Category::where('isVisible', 1)
+                ->orderBy('catId')->get();
+            $view->with('categories', $categories);
+        });
     }
 }

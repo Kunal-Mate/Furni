@@ -39,6 +39,33 @@ Route::post('/registration', [AuthController::class, 'registration'])->name('reg
 
 
 
+Route::group(['prefix' => 'policies'], function () {
+    Route::get('/terms-of-service', function () {
+        return view('frontend\policy\terms-of-service');
+    })->name('terms-of-service');
+
+    Route::get('/privacy-policy', function () {
+        return view('frontend\policy\privacy-policy');
+    })->name('privacy-policy');
+
+    Route::get('/refund-policy', function () {
+        return view('frontend\policy\refund-policy');
+    })->name('refund-policy');
+
+    Route::get('/shipping-policy', function () {
+        return view('frontend\policy\shipping-policy');
+    })->name('shipping-policy');
+
+
+});
+
+
+
+
+Route::get('/location', function () {
+    return redirect('https://www.google.com/maps?q=19.250020709045113,73.1224331939146');
+})->name('location.redirect');
+
 Route::group(['prefix' => 'Admin', 'middleware' => 'auth:admin'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/setup', [DashboardController::class, 'setup'])->name('setup');
@@ -127,6 +154,7 @@ Route::group(['prefix' => 'Admin', 'middleware' => 'auth:admin'], function () {
         // Route::get('/{id}', [OrderController::class, 'show'])->name('orders.show');
         Route::post('/updateStatus', [OrderController::class, 'updateOrderStatus'])->name('orders.updateStatus');
     });
+
 
 
 

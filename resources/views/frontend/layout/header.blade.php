@@ -1,105 +1,20 @@
 <header class="navbar-sticky sticky-top container z-fixed px-2 mt-4" data-sticky-element="">
-  <div class="navbar navbar-expand-lg flex-nowrap bg-body rounded-pill shadow ps-0 mx-1">
+  <!-- Top Header Row (Logo + Togglers) -->
+  <div class="navbar navbar-expand-lg flex-nowrap bg-body rounded-pill shadow ps-0 mx-1 main-header justify-content-between">
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark rounded-pill z-0 d-none d-block-dark"></div>
 
-    <!-- Mobile offcanvas menu toggler (Hamburger) -->
+    <!-- Mobile toggler -->
     <button type="button" class="navbar-toggler ms-3" data-bs-toggle="offcanvas" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navbar brand (Logo) -->
+    <!-- Logo -->
     <a class="navbar-brand position-relative z-1 ms-4 ms-sm-5 ms-lg-4 me-2 me-sm-0 me-lg-3"
       href="{{ route('index') }}">Sitwell Chairs</a>
 
-    <!-- Main navigation that turns into offcanvas on screens < 992px wide (lg breakpoint) -->
-    <nav class="offcanvas offcanvas-start" id="navbarNav" tabindex="-1" aria-labelledby="navbarNavLabel">
-      <div class="offcanvas-header py-3">
-        <h5 class="offcanvas-title" id="navbarNavLabel">Browse Chairs</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body pt-3 pb-4 py-lg-0 mx-lg-auto d-none">
-        <ul class="navbar-nav position-relative">
-
-          <li class="nav-item dropdown me-lg-n1 me-xl-0">
-            <a class="nav-link dropdown-toggle fs-sm" href="#" role="button" data-bs-toggle="dropdown"
-              data-bs-trigger="hover" data-bs-auto-close="outside" aria-expanded="false">Account</a>
-            <ul class="dropdown-menu" style="--cz-dropdown-spacer: 1rem">
-              <li class="dropend">
-                <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown"
-                  data-bs-trigger="hover" aria-expanded="false">Auth Pages</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="account-signin.html">Sign In</a></li>
-                  <li><a class="dropdown-item" href="account-signup.html">Sign Up</a></li>
-                  <li><a class="dropdown-item" href="account-password-recovery.html">Password Recovery</a></li>
-                </ul>
-              </li>
-              <li><a class="dropdown-item" href="account-orders.html">Orders History</a></li>
-              <li><a class="dropdown-item" href="account-wishlist.html">Wishlist</a></li>
-              <li><a class="dropdown-item" href="account-payment.html">Payment Methods</a></li>
-              <li><a class="dropdown-item" href="account-reviews.html">My Reviews</a></li>
-              <li><a class="dropdown-item" href="account-info.html">Personal Info</a></li>
-              <li><a class="dropdown-item" href="account-addresses.html">Addresses</a></li>
-              <li><a class="dropdown-item" href="account-notifications.html">Notifications</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown me-lg-n1 me-xl-0">
-            <a class="nav-link dropdown-toggle fs-sm" href="#" role="button" data-bs-toggle="dropdown"
-              data-bs-trigger="hover" data-bs-auto-close="outside" aria-expanded="false">Pages</a>
-            <ul class="dropdown-menu" style="--cz-dropdown-spacer: 1rem">
-              <li class="dropend">
-                <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown"
-                  data-bs-trigger="hover" aria-expanded="false">About</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="about-v1.html">About v.1</a></li>
-                  <li><a class="dropdown-item" href="about-v2.html">About v.2</a></li>
-                </ul>
-              </li>
-              <li class="dropend">
-                <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown"
-                  data-bs-trigger="hover" aria-expanded="false">Blog</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="blog-grid-v1.html">Grid View v.1</a></li>
-                  <li><a class="dropdown-item" href="blog-grid-v2.html">Grid View v.2</a></li>
-                  <li><a class="dropdown-item" href="blog-list.html">List View</a></li>
-                  <li><a class="dropdown-item" href="blog-single-v1.html">Single Post v.1</a></li>
-                  <li><a class="dropdown-item" href="blog-single-v2.html">Single Post v.2</a></li>
-                </ul>
-              </li>
-              <li class="dropend">
-                <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown"
-                  data-bs-trigger="hover" aria-expanded="false">Contact</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="contact-v1.html">Contact v.1</a></li>
-                  <li><a class="dropdown-item" href="contact-v2.html">Contact v.2</a></li>
-                  <li><a class="dropdown-item" href="contact-v3.html">Contact v.3</a></li>
-                </ul>
-              </li>
-              <li class="dropend">
-                <a class="dropdown-item dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown"
-                  data-bs-trigger="hover" aria-expanded="false">Help Center</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="help-topics-v1.html">Help Topics v.1</a></li>
-                  <li><a class="dropdown-item" href="help-topics-v2.html">Help Topics v.2</a></li>
-                  <li><a class="dropdown-item" href="help-single-article-v1.html">Help Single Article v.1</a></li>
-                  <li><a class="dropdown-item" href="help-single-article-v2.html">Help Single Article v.2</a></li>
-                </ul>
-              </li>
-
-
-
-            </ul>
-          </li>
-          <li class="nav-item me-lg-n2 me-xl-0">
-            <a class="nav-link fs-sm" href="">About</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Button group -->
+    <!-- Icons / Cart / Account -->
     <div class="d-flex gap-sm-1 position-relative z-1">
-
       <!-- Theme switcher (light/dark/auto) -->
       <div class="dropdown">
         <button type="button"
@@ -168,4 +83,54 @@
       </div>
     </div>
   </div>
+
+  <!-- SECOND ROW: Desktop Navigation Row -->
+  <div class="desktop-nav-row-container d-none d-lg-flex justify-content-center mt-2">
+    <div class="desktop-nav-row bg-body shadow-sm rounded-pill py-2 px-4">
+      <ul class="navbar-nav flex-row gap-4">
+
+        <li class="nav-item">
+          <a class="nav-link fs-sm" href="{{ url('/') }}">Home</a>
+        </li>
+        @foreach($categories as $cat)
+          <li class="nav-item me-lg-n2 me-xl-0">
+            <a class="nav-link fs-sm" href="{{ url('category/' . $cat->catName) }}">
+              {{ $cat->catName }}
+            </a>
+          </li>
+        @endforeach
+
+        <li class="nav-item">
+          <a class="nav-link fs-sm" href="{{ url('/contact') }}">Contact Us</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- MOBILE OFFCANVAS (unchanged) -->
+  <nav class="offcanvas offcanvas-start" id="navbarNav" tabindex="-1">
+    <div class="offcanvas-header py-3">
+      <h5 class="offcanvas-title">Sitwell Chairs</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body pt-3 pb-4 mx-lg-auto">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link fs-sm" href="{{ url('/') }}">Home</a></li>
+
+        @foreach($categories as $cat)
+          <li class="nav-item me-lg-n2 me-xl-0">
+            <a class="nav-link fs-sm" href="{{ url('category/' . $cat->catName) }}">
+              {{ $cat->catName }}
+            </a>
+          </li>
+        @endforeach
+
+
+
+        <li class="nav-item"><a class="nav-link fs-sm" href="{{ url('/contact') }}">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
 </header>

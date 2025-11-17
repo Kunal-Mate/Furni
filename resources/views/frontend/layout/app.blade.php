@@ -15,6 +15,9 @@
     <link rel="manifest" href="{{ asset('frontend/assets/manifest.json') }}">
     <link rel="icon" type="image/png" href="{{ asset('frontend/assets/app-icons/icon-32x32.png') }}" sizes="32x32">
     <link rel="apple-touch-icon" href="{{ asset('frontend/assets/app-icons/icon-180x180.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Theme switcher (color modes) -->
     <script src="{{ asset('frontend/assets/js/theme-switcher.js') }}"></script>
@@ -41,6 +44,27 @@
 
     @yield('customCss')
     @stack('componentStyle')
+    <style>
+        /* Desktop: show two rows */
+.desktop-nav-row {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hide second row when header sticks after scroll */
+.navbar-sticky.is-sticky .desktop-nav-row {
+    opacity: 0;
+    transform: translateY(-15px);
+    pointer-events: none;
+}
+
+/* Mobile: keep as offcanvas only */
+@media (max-width: 991px) {
+    .desktop-nav-row {
+        display: none !important;
+    }
+}
+
+    </style>
 </head>
 
 
@@ -308,6 +332,16 @@
     <script src="{{ asset('frontend/assets/vendor/timezz/timezz.js') }}"></script>
     <!-- Bootstrap + Theme scripts -->
     <script src="{{ asset('frontend/assets/js/theme.min.js') }}"></script>
+    <script>
+        document.addEventListener("scroll", function () {
+            const header = document.querySelector(".navbar-sticky");
+            if (window.scrollY > 50) {
+                header.classList.add("is-sticky");
+            } else {
+                header.classList.remove("is-sticky");
+            }
+        });
+    </script>
 
 
 </body>

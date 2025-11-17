@@ -2,7 +2,7 @@
 @section('content')
   <!-- Hero slider -->
   <section class="bg-body-tertiary min-vh-100 d-flex align-items-center overflow-hidden"
-    style="margin-top: -110px; padding-top: 110px">
+    style="margin-top: -130px; padding-top: 110px">
     <div class="container h-100 py-5 my-md-2 my-lg-3 my-xl-4 mb-xxl-5">
       <h1 class="display-4 text-center mx-auto mb-4" style="max-width: 780px">
         Design. Comfort. Perfection. In Every Seat
@@ -34,8 +34,8 @@
               <div class="swiper-wrapper">
                 @foreach($popular_products as $index => $product)
                   @php
-                    $prevIndex = ($index - 1 + count($popular_products)) % count($popular_products);
-                    $prevProduct = $popular_products[$prevIndex];
+  $prevIndex = ($index - 1 + count($popular_products)) % count($popular_products);
+  $prevProduct = $popular_products[$prevIndex];
                   @endphp
                   <div class="swiper-slide">
                     <div class="ratio ratio-1x1">
@@ -124,8 +124,8 @@
               <div class="swiper-wrapper">
                 @foreach($popular_products as $index => $product)
                   @php
-                    $nextIndex = ($index + 1) % count($popular_products);
-                    $nextProduct = $popular_products[$nextIndex];
+  $nextIndex = ($index + 1) % count($popular_products);
+  $nextProduct = $popular_products[$nextIndex];
                   @endphp
                   <div class="swiper-slide">
                     <div class="ratio ratio-1x1">
@@ -168,7 +168,7 @@
 
 
   <section class="bg-body-tertiary min-vh-100 d-flex align-items-center overflow-hidden d-none"
-    style="margin-top: -110px; padding-top: 110px">
+    style="margin-top: -130px; padding-top: 110px">
     <div class="container h-100 py-5 my-md-2 my-lg-3 my-xl-4 mb-xxl-5">
       <h1 class="display-4 text-center mx-auto mb-4" style="max-width: 780px">Design. Comfort. Perfection. In Every Seat
       </h1>
@@ -199,8 +199,8 @@
               <div class="swiper-wrapper">
                 @foreach($popular_products as $index => $product)
                   @php
-                    $prevIndex = ($index - 1 + count($popular_products)) % count($popular_products);
-                    $prevProduct = $popular_products[$prevIndex];
+  $prevIndex = ($index - 1 + count($popular_products)) % count($popular_products);
+  $prevProduct = $popular_products[$prevIndex];
                   @endphp
                   <div class="swiper-slide">
                     <div class="ratio ratio-1x1">
